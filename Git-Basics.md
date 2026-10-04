@@ -127,7 +127,9 @@ Every commit represents a meaningful point in your project's history.
 
 # ⚙️ 5. Installing Git
 
-First check whether Git is already installed.
+Before using Git, make sure Git is installed on your computer.
+
+## 🔍 Check if Git is already installed
 
 Open your terminal and run:
 
