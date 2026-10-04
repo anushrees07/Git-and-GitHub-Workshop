@@ -125,6 +125,7 @@ Every commit represents a meaningful point in your project's history.
 
 ---
 
+
 # ⚙️ 5. Installing Git
 
 Before using Git, make sure Git is installed on your computer.
@@ -143,7 +144,11 @@ You should see something similar to:
 git version 2.x.x
 ```
 
-If you see a version number, Git is installed.
+If you see a version number, Git is installed and ready to use. ✅
+
+If the command is not recognized, Git may not be installed or your terminal may not be able to find it.
+
+> 💡 **Tip:** If Git was installed while your terminal was open, close and reopen the terminal, then run `git --version` again.
 
 ---
 
@@ -255,15 +260,20 @@ That means:
 
 ---
 
+
 # 📦 10. Stage Your Changes
 
-Tell Git to start tracking the file:
+Before saving a snapshot of your changes, you need to choose which changes should be included in your next commit.
+
+This step is called **staging**.
+
+Run:
 
 ```bash
 git add README.md
 ```
 
-Now:
+Now check the repository status:
 
 ```bash
 git status
@@ -271,7 +281,7 @@ git status
 
 The file should appear under **Changes to be committed**.
 
-### What's happening?
+### 🧠 What's happening?
 
 ```text
 Working Directory
@@ -279,9 +289,17 @@ Working Directory
      git add
        ↓
 Staging Area
+       ↓
+   git commit
+       ↓
+Local Repository
 ```
 
-You have selected the change you want included in your next commit.
+- **Working Directory:** Where you create or edit files.
+- **Staging Area:** Where you prepare the changes you want to commit.
+- **Local Repository:** Where Git records your commits.
+
+> 💡 **Remember:** `git add` stages changes. It does not create a commit by itself.
 
 ---
 
@@ -549,25 +567,44 @@ You could technically call it something else.
 
 ---
 
+
 # ⬆️ 20. Push Your Code
 
-Push your local branch to GitHub:
+Before pushing your project, make sure your current branch is named `main`.
+
+Run:
+
+```bash
+git branch -M main
+```
+
+This renames your current branch to `main`.
+
+Now push your local branch to GitHub:
 
 ```bash
 git push -u origin main
 ```
 
-Now your commits are available on GitHub.
+- `git push` sends your local commits to the remote repository.
+- `-u` sets the upstream branch so future pushes can usually use `git push`.
+- `origin` is the conventional name of your remote repository.
+- `main` is the branch being pushed.
 
-### Remember:
+After the command succeeds, refresh your GitHub repository page to see your files.
+
+### 🧠 Remember
 
 ```text
-Local
-  ↓
- git push
-  ↓
-GitHub
+Local Repository
+       ↓
+    git push
+       ↓
+GitHub Repository
 ```
+
+> 💡 **Before pushing:** Make sure you have created the GitHub repository and connected it to your local repository using `git remote add origin URL`.
+
 
 ---
 
